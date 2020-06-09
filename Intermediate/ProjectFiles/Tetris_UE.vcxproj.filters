@@ -52,12 +52,24 @@
     <ClInclude Include="..\..\Source\Tetris_UE\JBlock.h">
       <Filter>Source\Tetris_UE</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Source\Tetris_UE\TBlock.h">
+      <Filter>Source\Tetris_UE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Tetris_UE\LBlock.h">
+      <Filter>Source\Tetris_UE</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Source\Tetris_UE\OBlock.cpp">
       <Filter>Source\Tetris_UE</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\Tetris_UE\JBlock.cpp">
+      <Filter>Source\Tetris_UE</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Tetris_UE\TBlock.cpp">
+      <Filter>Source\Tetris_UE</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Tetris_UE\LBlock.cpp">
       <Filter>Source\Tetris_UE</Filter>
     </ClCompile>
   </ItemGroup>

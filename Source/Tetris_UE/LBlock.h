@@ -13,5 +13,13 @@ UCLASS()
 class TETRIS_UE_API ALBlock : public ABlock
 {
 	GENERATED_BODY()
-	
+
+protected:
+	//×óÐý
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+		void Spin_L() override;
+
+	//ÓÒÐý
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+		void Spin_R() override;
 };

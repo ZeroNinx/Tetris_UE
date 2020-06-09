@@ -24,7 +24,7 @@ void ABlock::Spin_L()
 {
 	RotationIndex += 3;
 	RotationIndex %= 4;
-	SetActorRotation(RotationList[RotationIndex]);
+	SetActorRelativeRotation(RotationList[RotationIndex]);
 }
 
 //ÓÒÐý
@@ -32,7 +32,7 @@ void ABlock::Spin_R()
 {
 	RotationIndex++;
 	RotationIndex %= 4;
-	SetActorRotation(RotationList[RotationIndex]);
+	SetActorRelativeRotation(RotationList[RotationIndex]);
 }
 
 //Ã¿Ö¡Ö´ÐÐ
