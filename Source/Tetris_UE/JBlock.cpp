@@ -11,6 +11,8 @@ void AJBlock::Spin_L_Implementation()
 void AJBlock::Spin_R_Implementation()
 {
 	Super::Spin_R();
+
+	//旋转时校正位置
 	switch (RotationIndex)
 	{
 	case 1:
