@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\Tetris_UE.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{7EE7FDAA-585E-417D-8A94-5733488F04D4}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\Tetris_UE.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\Tetris_UEEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{F40C64A8-6260-4010-916C-9A9EAF5A6868}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\Tetris_UE">
+      <UniqueIdentifier>{C1B8102A-C689-4D1E-9C34-55A50B22FABD}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Tetris_UE\Block.cpp">
+      <Filter>Source\Tetris_UE</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Tetris_UE\Block.h">
+      <Filter>Source\Tetris_UE</Filter>
+    </ClInclude>
+    <None Include="..\..\Source\Tetris_UE\Tetris_UE.Build.cs">
+      <Filter>Source\Tetris_UE</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\Tetris_UE\Tetris_UE.cpp">
+      <Filter>Source\Tetris_UE</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Tetris_UE\Tetris_UE.h">
+      <Filter>Source\Tetris_UE</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Source\Tetris_UE\OBlock.h">
+      <Filter>Source\Tetris_UE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Tetris_UE\JBlock.h">
+      <Filter>Source\Tetris_UE</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Source\Tetris_UE\OBlock.cpp">
+      <Filter>Source\Tetris_UE</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Tetris_UE\JBlock.cpp">
+      <Filter>Source\Tetris_UE</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

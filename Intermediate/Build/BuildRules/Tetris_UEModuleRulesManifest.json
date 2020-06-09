@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"C:\\Users\\Zero\\Documents\\Unreal Projects\\Tetris_UE\\Source\\Tetris_UE\\Tetris_UE.Build.cs",
+		"C:\\Users\\Zero\\Documents\\Unreal Projects\\Tetris_UE\\Source\\Tetris_UE.Target.cs",
+		"C:\\Users\\Zero\\Documents\\Unreal Projects\\Tetris_UE\\Source\\Tetris_UEEditor.Target.cs"
+	],
+	"EngineVersion": "4.25.1"
+}

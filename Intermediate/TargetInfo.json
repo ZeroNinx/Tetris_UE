@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "Tetris_UE",
+			"Path": "C:\\Users\\Zero\\Documents\\Unreal Projects\\Tetris_UE\\Source\\Tetris_UE.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "Tetris_UEEditor",
+			"Path": "C:\\Users\\Zero\\Documents\\Unreal Projects\\Tetris_UE\\Source\\Tetris_UEEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}

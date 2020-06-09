@@ -1,0 +1,2 @@
+C:\Users\Zero\Documents\Unreal Projects\Tetris_UE\Intermediate\Build\Win64\UE4Editor\Development\Tetris_UE\Definitions.Tetris_UE.h
+C:\Users\Zero\Documents\Unreal Projects\Tetris_UE\Source\Tetris_UE\Tetris_UE.h
