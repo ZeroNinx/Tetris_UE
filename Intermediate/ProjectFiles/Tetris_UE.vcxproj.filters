@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\Tetris_UE.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{7EE7FDAA-585E-417D-8A94-5733488F04D4}</UniqueIdentifier>
+      <UniqueIdentifier>{3A777499-CA1B-4C07-B475-462B327CE32F}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Tetris_UE.Target.cs">
       <Filter>Source</Filter>
@@ -11,8 +11,11 @@
     <None Include="..\..\Source\Tetris_UEEditor.Target.cs">
       <Filter>Source</Filter>
     </None>
+    <None Include="..\..\.gitattributes" />
+    <None Include="..\..\.gitignore" />
+    <None Include="..\..\README.md" />
     <Filter Include="Config">
-      <UniqueIdentifier>{F40C64A8-6260-4010-916C-9A9EAF5A6868}</UniqueIdentifier>
+      <UniqueIdentifier>{40A1771D-DB26-48CF-8463-4D448B8165E3}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -27,12 +30,42 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\Tetris_UE">
-      <UniqueIdentifier>{C1B8102A-C689-4D1E-9C34-55A50B22FABD}</UniqueIdentifier>
+      <UniqueIdentifier>{A289673D-1829-4DBB-810A-C7C22C4E1005}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\Tetris_UE\Block.cpp">
       <Filter>Source\Tetris_UE</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Tetris_UE\Block.h">
+      <Filter>Source\Tetris_UE</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Tetris_UE\JBlock.cpp">
+      <Filter>Source\Tetris_UE</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Tetris_UE\JBlock.h">
+      <Filter>Source\Tetris_UE</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Tetris_UE\LBlock.cpp">
+      <Filter>Source\Tetris_UE</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Tetris_UE\LBlock.h">
+      <Filter>Source\Tetris_UE</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Tetris_UE\OBlock.cpp">
+      <Filter>Source\Tetris_UE</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Tetris_UE\OBlock.h">
+      <Filter>Source\Tetris_UE</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Tetris_UE\SBlock.cpp">
+      <Filter>Source\Tetris_UE</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Tetris_UE\SBlock.h">
+      <Filter>Source\Tetris_UE</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Tetris_UE\TBlock.cpp">
+      <Filter>Source\Tetris_UE</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Tetris_UE\TBlock.h">
       <Filter>Source\Tetris_UE</Filter>
     </ClInclude>
     <None Include="..\..\Source\Tetris_UE\Tetris_UE.Build.cs">
@@ -46,30 +79,18 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Source\Tetris_UE\OBlock.h">
+    <ClInclude Include="..\..\Source\Tetris_UE\ZBlock.h">
       <Filter>Source\Tetris_UE</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\Tetris_UE\JBlock.h">
-      <Filter>Source\Tetris_UE</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\Tetris_UE\TBlock.h">
-      <Filter>Source\Tetris_UE</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\Tetris_UE\LBlock.h">
+    <ClInclude Include="..\..\Source\Tetris_UE\IBlock.h">
       <Filter>Source\Tetris_UE</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Source\Tetris_UE\OBlock.cpp">
+    <ClCompile Include="..\..\Source\Tetris_UE\ZBlock.cpp">
       <Filter>Source\Tetris_UE</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\Tetris_UE\JBlock.cpp">
-      <Filter>Source\Tetris_UE</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\Tetris_UE\TBlock.cpp">
-      <Filter>Source\Tetris_UE</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\Tetris_UE\LBlock.cpp">
+    <ClCompile Include="..\..\Source\Tetris_UE\IBlock.cpp">
       <Filter>Source\Tetris_UE</Filter>
     </ClCompile>
   </ItemGroup>
