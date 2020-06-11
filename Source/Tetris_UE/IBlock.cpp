@@ -6,8 +6,29 @@
 //默认构造函数
 AIBlock::AIBlock():ABlock()
 {
-
+	//设定方块类型
 	Type = EBlockType::IBLOCK;
+
+	//初始化坐标列表
+	PosList.Init(TArray<FPoint>(), 3);
+
+	//上方块
+	PosList[0].Add(FPoint(0, -1));
+	PosList[0].Add(FPoint(1, 0));
+	PosList[0].Add(FPoint(0, 1));
+	PosList[0].Add(FPoint(-1, 0));
+
+	//下方块
+	PosList[1].Add(FPoint(0, 1));
+	PosList[1].Add(FPoint(-1, 0));
+	PosList[1].Add(FPoint(0, -1));
+	PosList[1].Add(FPoint(1, 0));
+
+	//下方块
+	PosList[2].Add(FPoint(0, 2));
+	PosList[2].Add(FPoint(-2, 0));
+	PosList[2].Add(FPoint(0, -2));
+	PosList[2].Add(FPoint(2, 0));
 
 	//设定中心块
 	UStaticMeshComponent* IB_Center = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("IBlock_Center"));
@@ -59,15 +80,19 @@ void AIBlock::Spin_L_Implementation()
 	{
 	case 3:
 		SetActorRelativeLocation(GetActorLocation() + FVector(0.0f, BlockSize, 0.0f));
+		Pos.Y++;
 		break;
 	case 2:
 		SetActorRelativeLocation(GetActorLocation() + FVector(BlockSize, 0.0f, 0.0f));
+		Pos.X++;
 		break;
 	case 1:
 		SetActorRelativeLocation(GetActorLocation() + FVector(0.0f, -BlockSize, 0.0f));
+		Pos.Y--;
 		break;
 	case 0:
 		SetActorRelativeLocation(GetActorLocation() + FVector(-BlockSize, 0.0f, 0.0f));
+		Pos.X--;
 		break;
 	default:
 		break;
@@ -84,19 +109,37 @@ void AIBlock::Spin_R_Implementation()
 	{
 	case 1:
 		SetActorRelativeLocation(GetActorLocation() + FVector(0.0f, BlockSize, 0.0f));
+		Pos.Y++;
 		break;
 	case 2:
 		SetActorRelativeLocation(GetActorLocation() + FVector(-BlockSize, 0.0f, 0.0f));
+		Pos.X--;
 		break;
 	case 3:
 		SetActorRelativeLocation(GetActorLocation() + FVector(0.0f, -BlockSize, 0.0f));
+		Pos.Y--;
 		break;
 	case 0:
 		SetActorRelativeLocation(GetActorLocation() + FVector(BlockSize, 0.0f, 0.0f));
+		Pos.X++;
 		break;
 	default:
 		break;
 	}
 }
 
+//返回坐标列表
+TArray<FPoint> AIBlock::GetPosList()
+{
+	//创建数组
+	TArray<FPoint> Arr;
+
+	//中心坐标
+	Arr.Add(Pos);
+
+	//中心坐标通过相对坐标旋转角度计算出其余坐标
+	for (int i = 0; i < PosList.Num(); i++)
+		Arr.Add(Pos + PosList[i][RotationIndex]);
+	return Arr;
+}
 

@@ -7,7 +7,7 @@
 #include "IBlock.generated.h"
 
 /**
- * 
+ * I·½¿é
  */
 UCLASS()
 class TETRIS_UE_API AIBlock : public ABlock
@@ -24,4 +24,7 @@ protected:
 
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
 	void Spin_R() override;
+
+	UFUNCTION(BlueprintCallable)
+	TArray<FPoint> GetPosList() override;
 };

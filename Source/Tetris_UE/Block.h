@@ -30,6 +30,17 @@ struct FPoint
 	//默认初始化为0
 	FPoint() :X(0), Y(0) {};
 
+	//构造函数
+	FPoint(int x,int y) :X(x), Y(y) {};
+
+	FPoint operator+(const FPoint& b)
+	{
+		FPoint fp;
+		fp.X = this->X + b.X;
+		fp.Y = this->Y + b.Y;
+		return fp;
+	}
+
 	//X轴坐标
 	UPROPERTY(EditAnywhere,BlueprintReadWrite)
 	int X;
@@ -74,7 +85,10 @@ protected:
 		FRotator(0.0f,180.0f,0.0f),
 		FRotator(0.0f,270.0f,0.0f)
 	};
-	
+
+	//坐标列表
+	TArray<TArray<FPoint>> PosList;
+
 	//游戏开始
 	virtual void BeginPlay() override;
 
@@ -93,7 +107,6 @@ public:
 	void SetPos(FPoint p);
 
 	//获取坐标列表
-	UFUNCTION(BlueprintCallable)
 	virtual TArray<FPoint> GetPosList();
 
 };

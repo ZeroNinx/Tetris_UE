@@ -153,7 +153,7 @@ void EmptyLinkFunctionForGeneratedCodeJBlock() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AJBlock, 940254458);
+	IMPLEMENT_CLASS(AJBlock, 2616541335);
 	template<> TETRIS_UE_API UClass* StaticClass<AJBlock>()
 	{
 		return AJBlock::StaticClass();
