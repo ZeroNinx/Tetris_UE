@@ -14,6 +14,9 @@ class TETRIS_UE_API AIBlock : public ABlock
 {
 	GENERATED_BODY()
 
+public:
+	AIBlock();
+
 protected:
 
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)

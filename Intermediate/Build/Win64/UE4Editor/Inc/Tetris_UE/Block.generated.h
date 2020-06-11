@@ -8,22 +8,33 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+struct FPoint;
 #ifdef TETRIS_UE_Block_generated_h
 #error "Block.generated.h already included, missing '#pragma once' in Block.h"
 #endif
 #define TETRIS_UE_Block_generated_h
 
-#define Tetris_UE_Source_Tetris_UE_Block_h_27_GENERATED_BODY \
+#define Tetris_UE_Source_Tetris_UE_Block_h_28_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FPoint_Statics; \
 	TETRIS_UE_API static class UScriptStruct* StaticStruct();
 
 
 template<> TETRIS_UE_API UScriptStruct* StaticStruct<struct FPoint>();
 
-#define Tetris_UE_Source_Tetris_UE_Block_h_45_SPARSE_DATA
-#define Tetris_UE_Source_Tetris_UE_Block_h_45_RPC_WRAPPERS
-#define Tetris_UE_Source_Tetris_UE_Block_h_45_RPC_WRAPPERS_NO_PURE_DECLS
-#define Tetris_UE_Source_Tetris_UE_Block_h_45_INCLASS_NO_PURE_DECLS \
+#define Tetris_UE_Source_Tetris_UE_Block_h_46_SPARSE_DATA
+#define Tetris_UE_Source_Tetris_UE_Block_h_46_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execGetPosList); \
+	DECLARE_FUNCTION(execSetPos);
+
+
+#define Tetris_UE_Source_Tetris_UE_Block_h_46_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execGetPosList); \
+	DECLARE_FUNCTION(execSetPos);
+
+
+#define Tetris_UE_Source_Tetris_UE_Block_h_46_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesABlock(); \
 	friend struct Z_Construct_UClass_ABlock_Statics; \
@@ -32,7 +43,7 @@ public: \
 	DECLARE_SERIALIZER(ABlock)
 
 
-#define Tetris_UE_Source_Tetris_UE_Block_h_45_INCLASS \
+#define Tetris_UE_Source_Tetris_UE_Block_h_46_INCLASS \
 private: \
 	static void StaticRegisterNativesABlock(); \
 	friend struct Z_Construct_UClass_ABlock_Statics; \
@@ -41,7 +52,7 @@ public: \
 	DECLARE_SERIALIZER(ABlock)
 
 
-#define Tetris_UE_Source_Tetris_UE_Block_h_45_STANDARD_CONSTRUCTORS \
+#define Tetris_UE_Source_Tetris_UE_Block_h_46_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API ABlock(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ABlock) \
@@ -54,7 +65,7 @@ private: \
 public:
 
 
-#define Tetris_UE_Source_Tetris_UE_Block_h_45_ENHANCED_CONSTRUCTORS \
+#define Tetris_UE_Source_Tetris_UE_Block_h_46_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API ABlock(ABlock&&); \
@@ -65,33 +76,33 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ABlock); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(ABlock)
 
 
-#define Tetris_UE_Source_Tetris_UE_Block_h_45_PRIVATE_PROPERTY_OFFSET \
+#define Tetris_UE_Source_Tetris_UE_Block_h_46_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__BlockSize() { return STRUCT_OFFSET(ABlock, BlockSize); } \
-	FORCEINLINE static uint32 __PPO__RotationList() { return STRUCT_OFFSET(ABlock, RotationList); } \
-	FORCEINLINE static uint32 __PPO__RotationIndex() { return STRUCT_OFFSET(ABlock, RotationIndex); }
+	FORCEINLINE static uint32 __PPO__Pos() { return STRUCT_OFFSET(ABlock, Pos); } \
+	FORCEINLINE static uint32 __PPO__Type() { return STRUCT_OFFSET(ABlock, Type); }
 
 
-#define Tetris_UE_Source_Tetris_UE_Block_h_42_PROLOG
-#define Tetris_UE_Source_Tetris_UE_Block_h_45_GENERATED_BODY_LEGACY \
+#define Tetris_UE_Source_Tetris_UE_Block_h_43_PROLOG
+#define Tetris_UE_Source_Tetris_UE_Block_h_46_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	Tetris_UE_Source_Tetris_UE_Block_h_45_PRIVATE_PROPERTY_OFFSET \
-	Tetris_UE_Source_Tetris_UE_Block_h_45_SPARSE_DATA \
-	Tetris_UE_Source_Tetris_UE_Block_h_45_RPC_WRAPPERS \
-	Tetris_UE_Source_Tetris_UE_Block_h_45_INCLASS \
-	Tetris_UE_Source_Tetris_UE_Block_h_45_STANDARD_CONSTRUCTORS \
+	Tetris_UE_Source_Tetris_UE_Block_h_46_PRIVATE_PROPERTY_OFFSET \
+	Tetris_UE_Source_Tetris_UE_Block_h_46_SPARSE_DATA \
+	Tetris_UE_Source_Tetris_UE_Block_h_46_RPC_WRAPPERS \
+	Tetris_UE_Source_Tetris_UE_Block_h_46_INCLASS \
+	Tetris_UE_Source_Tetris_UE_Block_h_46_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define Tetris_UE_Source_Tetris_UE_Block_h_45_GENERATED_BODY \
+#define Tetris_UE_Source_Tetris_UE_Block_h_46_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	Tetris_UE_Source_Tetris_UE_Block_h_45_PRIVATE_PROPERTY_OFFSET \
-	Tetris_UE_Source_Tetris_UE_Block_h_45_SPARSE_DATA \
-	Tetris_UE_Source_Tetris_UE_Block_h_45_RPC_WRAPPERS_NO_PURE_DECLS \
-	Tetris_UE_Source_Tetris_UE_Block_h_45_INCLASS_NO_PURE_DECLS \
-	Tetris_UE_Source_Tetris_UE_Block_h_45_ENHANCED_CONSTRUCTORS \
+	Tetris_UE_Source_Tetris_UE_Block_h_46_PRIVATE_PROPERTY_OFFSET \
+	Tetris_UE_Source_Tetris_UE_Block_h_46_SPARSE_DATA \
+	Tetris_UE_Source_Tetris_UE_Block_h_46_RPC_WRAPPERS_NO_PURE_DECLS \
+	Tetris_UE_Source_Tetris_UE_Block_h_46_INCLASS_NO_PURE_DECLS \
+	Tetris_UE_Source_Tetris_UE_Block_h_46_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

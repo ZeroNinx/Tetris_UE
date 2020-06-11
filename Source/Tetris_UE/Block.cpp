@@ -11,13 +11,20 @@ ABlock::ABlock()
 
 }
 
-
 //游戏开始
 void ABlock::BeginPlay()
 {
 	Super::BeginPlay();
 	
 }
+
+//每帧执行
+void ABlock::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+
+}
+
 
 //左旋
 void ABlock::Spin_L()
@@ -35,10 +42,17 @@ void ABlock::Spin_R()
 	SetActorRelativeRotation(RotationList[RotationIndex]);
 }
 
-//每帧执行
-void ABlock::Tick(float DeltaTime)
+//设定坐标
+void ABlock::SetPos(FPoint p)
 {
-	Super::Tick(DeltaTime);
-
+	Pos = p;
+	SetActorLocation(FVector(Pos.X * 60, Pos.Y * 60, 0.0f));
 }
 
+//返回坐标列表
+TArray<FPoint> ABlock::GetPosList()
+{
+	TArray<FPoint> Arr;
+	Arr.Add(Pos);
+	return Arr;
+}

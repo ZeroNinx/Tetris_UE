@@ -19,7 +19,6 @@ void EmptyLinkFunctionForGeneratedCodeBlock() {}
 	TETRIS_UE_API UClass* Z_Construct_UClass_ABlock_NoRegister();
 	TETRIS_UE_API UClass* Z_Construct_UClass_ABlock();
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
-	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FRotator();
 // End Cross Module References
 	static UEnum* EBlockType_StaticEnum()
 	{
@@ -190,8 +189,100 @@ static struct FScriptStruct_Tetris_UE_StaticRegisterNativesFPoint
 		return ReturnStruct;
 	}
 	uint32 Get_Z_Construct_UScriptStruct_FPoint_Hash() { return 779017914U; }
+	DEFINE_FUNCTION(ABlock::execGetPosList)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		*(TArray<FPoint>*)Z_Param__Result=P_THIS->GetPosList();
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(ABlock::execSetPos)
+	{
+		P_GET_STRUCT(FPoint,Z_Param_p);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->SetPos(Z_Param_p);
+		P_NATIVE_END;
+	}
 	void ABlock::StaticRegisterNativesABlock()
 	{
+		UClass* Class = ABlock::StaticClass();
+		static const FNameNativePtrPair Funcs[] = {
+			{ "GetPosList", &ABlock::execGetPosList },
+			{ "SetPos", &ABlock::execSetPos },
+		};
+		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_ABlock_GetPosList_Statics
+	{
+		struct Block_eventGetPosList_Parms
+		{
+			TArray<FPoint> ReturnValue;
+		};
+		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_ReturnValue;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_ReturnValue_Inner;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_ABlock_GetPosList_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(Block_eventGetPosList_Parms, ReturnValue), EArrayPropertyFlags::None, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_ABlock_GetPosList_Statics::NewProp_ReturnValue_Inner = { "ReturnValue", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UScriptStruct_FPoint, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ABlock_GetPosList_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABlock_GetPosList_Statics::NewProp_ReturnValue,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABlock_GetPosList_Statics::NewProp_ReturnValue_Inner,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ABlock_GetPosList_Statics::Function_MetaDataParams[] = {
+		{ "Comment", "//??\xc8\xa1?????\xd0\xb1?\n" },
+		{ "ModuleRelativePath", "Block.h" },
+		{ "ToolTip", "??\xc8\xa1?????\xd0\xb1?" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ABlock_GetPosList_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABlock, nullptr, "GetPosList", nullptr, nullptr, sizeof(Block_eventGetPosList_Parms), Z_Construct_UFunction_ABlock_GetPosList_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ABlock_GetPosList_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020400, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ABlock_GetPosList_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ABlock_GetPosList_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_ABlock_GetPosList()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_ABlock_GetPosList_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_ABlock_SetPos_Statics
+	{
+		struct Block_eventSetPos_Parms
+		{
+			FPoint p;
+		};
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_p;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_ABlock_SetPos_Statics::NewProp_p = { "p", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(Block_eventSetPos_Parms, p), Z_Construct_UScriptStruct_FPoint, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ABlock_SetPos_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABlock_SetPos_Statics::NewProp_p,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ABlock_SetPos_Statics::Function_MetaDataParams[] = {
+		{ "Comment", "//?\xe8\xb6\xa8????\n" },
+		{ "ModuleRelativePath", "Block.h" },
+		{ "ToolTip", "?\xe8\xb6\xa8????" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ABlock_SetPos_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABlock, nullptr, "SetPos", nullptr, nullptr, sizeof(Block_eventSetPos_Parms), Z_Construct_UFunction_ABlock_SetPos_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ABlock_SetPos_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ABlock_SetPos_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ABlock_SetPos_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_ABlock_SetPos()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_ABlock_SetPos_Statics::FuncParams);
+		}
+		return ReturnFunction;
 	}
 	UClass* Z_Construct_UClass_ABlock_NoRegister()
 	{
@@ -200,6 +291,7 @@ static struct FScriptStruct_Tetris_UE_StaticRegisterNativesFPoint
 	struct Z_Construct_UClass_ABlock_Statics
 	{
 		static UObject* (*const DependentSingletons[])();
+		static const FClassFunctionLinkInfo FuncInfo[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
@@ -213,14 +305,6 @@ static struct FScriptStruct_Tetris_UE_StaticRegisterNativesFPoint
 #endif
 		static const UE4CodeGen_Private::FStructPropertyParams NewProp_Pos;
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_RotationIndex_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FUnsizedIntPropertyParams NewProp_RotationIndex;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_RotationList_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_RotationList;
-#if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_BlockSize_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FUnsizedIntPropertyParams NewProp_BlockSize;
@@ -231,6 +315,10 @@ static struct FScriptStruct_Tetris_UE_StaticRegisterNativesFPoint
 	UObject* (*const Z_Construct_UClass_ABlock_Statics::DependentSingletons[])() = {
 		(UObject* (*)())Z_Construct_UClass_AActor,
 		(UObject* (*)())Z_Construct_UPackage__Script_Tetris_UE,
+	};
+	const FClassFunctionLinkInfo Z_Construct_UClass_ABlock_Statics::FuncInfo[] = {
+		{ &Z_Construct_UFunction_ABlock_GetPosList, "GetPosList" }, // 1539894603
+		{ &Z_Construct_UFunction_ABlock_SetPos, "SetPos" }, // 4022394586
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABlock_Statics::Class_MetaDataParams[] = {
@@ -243,11 +331,11 @@ static struct FScriptStruct_Tetris_UE_StaticRegisterNativesFPoint
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABlock_Statics::NewProp_Type_MetaData[] = {
 		{ "Category", "Block" },
-		{ "Comment", "//????\n" },
+		{ "Comment", "//????????\n" },
 		{ "ModuleRelativePath", "Block.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FEnumPropertyParams Z_Construct_UClass_ABlock_Statics::NewProp_Type = { "Type", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABlock, Type), Z_Construct_UEnum_Tetris_UE_EBlockType, METADATA_PARAMS(Z_Construct_UClass_ABlock_Statics::NewProp_Type_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABlock_Statics::NewProp_Type_MetaData)) };
+	const UE4CodeGen_Private::FEnumPropertyParams Z_Construct_UClass_ABlock_Statics::NewProp_Type = { "Type", nullptr, (EPropertyFlags)0x0020080000020015, UE4CodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABlock, Type), Z_Construct_UEnum_Tetris_UE_EBlockType, METADATA_PARAMS(Z_Construct_UClass_ABlock_Statics::NewProp_Type_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABlock_Statics::NewProp_Type_MetaData)) };
 	const UE4CodeGen_Private::FBytePropertyParams Z_Construct_UClass_ABlock_Statics::NewProp_Type_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABlock_Statics::NewProp_Pos_MetaData[] = {
@@ -256,29 +344,13 @@ static struct FScriptStruct_Tetris_UE_StaticRegisterNativesFPoint
 		{ "ModuleRelativePath", "Block.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UClass_ABlock_Statics::NewProp_Pos = { "Pos", nullptr, (EPropertyFlags)0x0010000000000004, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABlock, Pos), Z_Construct_UScriptStruct_FPoint, METADATA_PARAMS(Z_Construct_UClass_ABlock_Statics::NewProp_Pos_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABlock_Statics::NewProp_Pos_MetaData)) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABlock_Statics::NewProp_RotationIndex_MetaData[] = {
-		{ "Category", "Block" },
-		{ "Comment", "//??\xc7\xb0??\xd7\xaa????\n" },
-		{ "ModuleRelativePath", "Block.h" },
-		{ "ToolTip", "??\xc7\xb0??\xd7\xaa????" },
-	};
-#endif
-	const UE4CodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UClass_ABlock_Statics::NewProp_RotationIndex = { "RotationIndex", nullptr, (EPropertyFlags)0x0020080000000004, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABlock, RotationIndex), METADATA_PARAMS(Z_Construct_UClass_ABlock_Statics::NewProp_RotationIndex_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABlock_Statics::NewProp_RotationIndex_MetaData)) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABlock_Statics::NewProp_RotationList_MetaData[] = {
-		{ "Category", "Block" },
-		{ "Comment", "//??\xd7\xaa?\xd0\xb1?\n" },
-		{ "ModuleRelativePath", "Block.h" },
-		{ "ToolTip", "??\xd7\xaa?\xd0\xb1?" },
-	};
-#endif
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UClass_ABlock_Statics::NewProp_RotationList = { "RotationList", nullptr, (EPropertyFlags)0x0020080000000001, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, CPP_ARRAY_DIM(RotationList, ABlock), STRUCT_OFFSET(ABlock, RotationList), Z_Construct_UScriptStruct_FRotator, METADATA_PARAMS(Z_Construct_UClass_ABlock_Statics::NewProp_RotationList_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABlock_Statics::NewProp_RotationList_MetaData)) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UClass_ABlock_Statics::NewProp_Pos = { "Pos", nullptr, (EPropertyFlags)0x0020080000000014, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABlock, Pos), Z_Construct_UScriptStruct_FPoint, METADATA_PARAMS(Z_Construct_UClass_ABlock_Statics::NewProp_Pos_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABlock_Statics::NewProp_Pos_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABlock_Statics::NewProp_BlockSize_MetaData[] = {
 		{ "Category", "Block" },
+		{ "Comment", "//??????\xd0\xa1\n" },
 		{ "ModuleRelativePath", "Block.h" },
+		{ "ToolTip", "??????\xd0\xa1" },
 	};
 #endif
 	const UE4CodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UClass_ABlock_Statics::NewProp_BlockSize = { "BlockSize", nullptr, (EPropertyFlags)0x0020080000000001, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABlock, BlockSize), METADATA_PARAMS(Z_Construct_UClass_ABlock_Statics::NewProp_BlockSize_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABlock_Statics::NewProp_BlockSize_MetaData)) };
@@ -286,8 +358,6 @@ static struct FScriptStruct_Tetris_UE_StaticRegisterNativesFPoint
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABlock_Statics::NewProp_Type,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABlock_Statics::NewProp_Type_Underlying,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABlock_Statics::NewProp_Pos,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABlock_Statics::NewProp_RotationIndex,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABlock_Statics::NewProp_RotationList,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABlock_Statics::NewProp_BlockSize,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ABlock_Statics::StaticCppClassTypeInfo = {
@@ -298,11 +368,11 @@ static struct FScriptStruct_Tetris_UE_StaticRegisterNativesFPoint
 		"Engine",
 		&StaticCppClassTypeInfo,
 		DependentSingletons,
-		nullptr,
+		FuncInfo,
 		Z_Construct_UClass_ABlock_Statics::PropPointers,
 		nullptr,
 		UE_ARRAY_COUNT(DependentSingletons),
-		0,
+		UE_ARRAY_COUNT(FuncInfo),
 		UE_ARRAY_COUNT(Z_Construct_UClass_ABlock_Statics::PropPointers),
 		0,
 		0x009000A4u,
@@ -317,7 +387,7 @@ static struct FScriptStruct_Tetris_UE_StaticRegisterNativesFPoint
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ABlock, 764691559);
+	IMPLEMENT_CLASS(ABlock, 1397395026);
 	template<> TETRIS_UE_API UClass* StaticClass<ABlock>()
 	{
 		return ABlock::StaticClass();

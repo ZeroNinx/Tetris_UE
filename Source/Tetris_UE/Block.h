@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include <Components/StaticMeshComponent.h>
 #include "Block.generated.h"
 
 //枚举蓝图类，表示方块类型
@@ -50,11 +51,22 @@ public:
 
 protected:
 	
+	//方块大小
 	UPROPERTY(EditAnywhere)
 	int BlockSize = 60;
 
+	//坐标
+	UPROPERTY(BlueprintReadOnly)
+	FPoint Pos;
+
+	//方块类型
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	EBlockType Type;
+
+	//当前旋转方向
+	int RotationIndex = 0;
+
 	//旋转列表
-	UPROPERTY(EditAnywhere)
 	FRotator RotationList[4] =
 	{
 		FRotator(0.0f,0.0f,0.0f),
@@ -62,11 +74,6 @@ protected:
 		FRotator(0.0f,180.0f,0.0f),
 		FRotator(0.0f,270.0f,0.0f)
 	};
-	
-	//当前旋转方向
-	UPROPERTY(BlueprintReadWrite)
-	int RotationIndex = 0;
-	
 	
 	//游戏开始
 	virtual void BeginPlay() override;
@@ -81,12 +88,12 @@ public:
 	//每帧执行
 	virtual void Tick(float DeltaTime) override;
 
-	//坐标
-	UPROPERTY(BlueprintReadWrite)
-	FPoint Pos;
+	//设定坐标
+	UFUNCTION(BlueprintCallable)
+	void SetPos(FPoint p);
 
-	//种类
-	UPROPERTY(EditAnywhere)
-	EBlockType Type;
+	//获取坐标列表
+	UFUNCTION(BlueprintCallable)
+	virtual TArray<FPoint> GetPosList();
 
 };
