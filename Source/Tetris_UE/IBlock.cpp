@@ -24,7 +24,7 @@ AIBlock::AIBlock():ABlock()
 	PosList[1].Add(FPoint(0, -1));
 	PosList[1].Add(FPoint(1, 0));
 
-	//下方块
+	//下下方块
 	PosList[2].Add(FPoint(0, 2));
 	PosList[2].Add(FPoint(-2, 0));
 	PosList[2].Add(FPoint(0, -2));
@@ -36,17 +36,17 @@ AIBlock::AIBlock():ABlock()
 
 	//上块
 	UStaticMeshComponent* IB_Up = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("IBlock_Up"));
-	IB_Up->SetRelativeLocation(FVector(0.0f, -60.0f, 0.0f));
+	IB_Up->SetRelativeLocation(FVector(0.0f, -BlockSize, 0.0f));
 	IB_Up->SetupAttachment(RootComponent);
 
 	//下块
 	UStaticMeshComponent* IB_Down = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("IBlock_Down"));
-	IB_Down->SetRelativeLocation(FVector(0.0f, 60.0f, 0.0f));
+	IB_Down->SetRelativeLocation(FVector(0.0f, BlockSize, 0.0f));
 	IB_Down->SetupAttachment(RootComponent);
 
 	//下下块
 	UStaticMeshComponent* IB_DownDown = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("IBlock_DownDown"));
-	IB_DownDown->SetRelativeLocation(FVector(0.0f, 120.0f, 0.0f));
+	IB_DownDown->SetRelativeLocation(FVector(0.0f, BlockSize*2, 0.0f));
 	IB_DownDown->SetupAttachment(RootComponent);
 
 	//加载形状
@@ -71,7 +71,7 @@ AIBlock::AIBlock():ABlock()
 }
 
 //左旋
-void AIBlock::Spin_L_Implementation()
+void AIBlock::Spin_L()
 {
 	Super::Spin_L();
 
@@ -100,7 +100,7 @@ void AIBlock::Spin_L_Implementation()
 }
 
 //右旋
-void AIBlock::Spin_R_Implementation()
+void AIBlock::Spin_R()
 {
 	Super::Spin_R();
 	

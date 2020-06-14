@@ -19,12 +19,9 @@ public:
 
 protected:
 
-	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
 	void Spin_L() override;
 
-	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
 	void Spin_R() override;
 
-	UFUNCTION(BlueprintCallable)
 	TArray<FPoint> GetPosList() override;
 };

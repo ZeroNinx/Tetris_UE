@@ -93,9 +93,11 @@ protected:
 	virtual void BeginPlay() override;
 
 	//左旋转
+	UFUNCTION(BlueprintCallable)
 	virtual void Spin_L();
 	
 	//右旋转
+	UFUNCTION(BlueprintCallable)
 	virtual void Spin_R();
 
 public:	
@@ -107,6 +109,7 @@ public:
 	void SetPos(FPoint p);
 
 	//获取坐标列表
+	UFUNCTION(BlueprintCallable)
 	virtual TArray<FPoint> GetPosList();
 
 };

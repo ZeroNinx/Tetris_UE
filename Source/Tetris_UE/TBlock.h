@@ -7,18 +7,21 @@
 #include "TBlock.generated.h"
 
 /**
- * 
+ * T·½¿é
  */
 UCLASS()
 class TETRIS_UE_API ATBlock : public ABlock
 {
 	GENERATED_BODY()
 
+public:
+	ATBlock();
+
 protected:
 
-	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
 	void Spin_L() override;
 
-	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
 	void Spin_R() override;
+
+	TArray<FPoint> GetPosList() override;
 };

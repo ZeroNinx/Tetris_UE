@@ -7,20 +7,22 @@
 #include "JBlock.generated.h"
 
 /**
- * 
+ * J·½¿é
  */
 UCLASS()
 class TETRIS_UE_API AJBlock : public ABlock
 {
 	GENERATED_BODY()
 
+public:
+	AJBlock();
+
 protected:
-	//×óÐý
-	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+
 	void Spin_L() override;
-	
-	//ÓÒÐý
-	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+
 	void Spin_R() override;
+
+	TArray<FPoint> GetPosList() override;
 
 };

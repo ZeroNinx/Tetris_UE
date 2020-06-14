@@ -14,24 +14,8 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define TETRIS_UE_OBlock_generated_h
 
 #define Tetris_UE_Source_Tetris_UE_OBlock_h_15_SPARSE_DATA
-#define Tetris_UE_Source_Tetris_UE_OBlock_h_15_RPC_WRAPPERS \
-	virtual void Spin_R_Implementation(); \
-	virtual void Spin_L_Implementation(); \
- \
-	DECLARE_FUNCTION(execSpin_R); \
-	DECLARE_FUNCTION(execSpin_L);
-
-
-#define Tetris_UE_Source_Tetris_UE_OBlock_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
-	virtual void Spin_R_Implementation(); \
-	virtual void Spin_L_Implementation(); \
- \
-	DECLARE_FUNCTION(execSpin_R); \
-	DECLARE_FUNCTION(execSpin_L);
-
-
-#define Tetris_UE_Source_Tetris_UE_OBlock_h_15_EVENT_PARMS
-#define Tetris_UE_Source_Tetris_UE_OBlock_h_15_CALLBACK_WRAPPERS
+#define Tetris_UE_Source_Tetris_UE_OBlock_h_15_RPC_WRAPPERS
+#define Tetris_UE_Source_Tetris_UE_OBlock_h_15_RPC_WRAPPERS_NO_PURE_DECLS
 #define Tetris_UE_Source_Tetris_UE_OBlock_h_15_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAOBlock(); \
@@ -52,7 +36,7 @@ public: \
 
 #define Tetris_UE_Source_Tetris_UE_OBlock_h_15_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API AOBlock(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	NO_API AOBlock(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AOBlock) \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, AOBlock); \
 DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AOBlock); \
@@ -64,8 +48,6 @@ public:
 
 
 #define Tetris_UE_Source_Tetris_UE_OBlock_h_15_ENHANCED_CONSTRUCTORS \
-	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API AOBlock() { }; \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API AOBlock(AOBlock&&); \
@@ -77,17 +59,13 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AOBlock); \
 
 
 #define Tetris_UE_Source_Tetris_UE_OBlock_h_15_PRIVATE_PROPERTY_OFFSET
-#define Tetris_UE_Source_Tetris_UE_OBlock_h_12_PROLOG \
-	Tetris_UE_Source_Tetris_UE_OBlock_h_15_EVENT_PARMS
-
-
+#define Tetris_UE_Source_Tetris_UE_OBlock_h_12_PROLOG
 #define Tetris_UE_Source_Tetris_UE_OBlock_h_15_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
 	Tetris_UE_Source_Tetris_UE_OBlock_h_15_PRIVATE_PROPERTY_OFFSET \
 	Tetris_UE_Source_Tetris_UE_OBlock_h_15_SPARSE_DATA \
 	Tetris_UE_Source_Tetris_UE_OBlock_h_15_RPC_WRAPPERS \
-	Tetris_UE_Source_Tetris_UE_OBlock_h_15_CALLBACK_WRAPPERS \
 	Tetris_UE_Source_Tetris_UE_OBlock_h_15_INCLASS \
 	Tetris_UE_Source_Tetris_UE_OBlock_h_15_STANDARD_CONSTRUCTORS \
 public: \
@@ -100,7 +78,6 @@ public: \
 	Tetris_UE_Source_Tetris_UE_OBlock_h_15_PRIVATE_PROPERTY_OFFSET \
 	Tetris_UE_Source_Tetris_UE_OBlock_h_15_SPARSE_DATA \
 	Tetris_UE_Source_Tetris_UE_OBlock_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
-	Tetris_UE_Source_Tetris_UE_OBlock_h_15_CALLBACK_WRAPPERS \
 	Tetris_UE_Source_Tetris_UE_OBlock_h_15_INCLASS_NO_PURE_DECLS \
 	Tetris_UE_Source_Tetris_UE_OBlock_h_15_ENHANCED_CONSTRUCTORS \
 private: \
