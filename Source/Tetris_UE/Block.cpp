@@ -42,9 +42,9 @@ void ABlock::Spin_R()
 }
 
 //Éè¶¨×ø±ê
-void ABlock::SetPos(FPoint p)
+void ABlock::SetPos(FPoint NewPos)
 {
-	Pos = p;
+	Pos = NewPos;
 	SetActorLocation(FVector(Pos.X * 60, Pos.Y * 60, 0.0f));
 }
 

@@ -198,10 +198,10 @@ static struct FScriptStruct_Tetris_UE_StaticRegisterNativesFPoint
 	}
 	DEFINE_FUNCTION(ABlock::execSetPos)
 	{
-		P_GET_STRUCT(FPoint,Z_Param_p);
+		P_GET_STRUCT(FPoint,Z_Param_NewPos);
 		P_FINISH;
 		P_NATIVE_BEGIN;
-		P_THIS->SetPos(Z_Param_p);
+		P_THIS->SetPos(Z_Param_NewPos);
 		P_NATIVE_END;
 	}
 	DEFINE_FUNCTION(ABlock::execSpin_R)
@@ -270,18 +270,18 @@ static struct FScriptStruct_Tetris_UE_StaticRegisterNativesFPoint
 	{
 		struct Block_eventSetPos_Parms
 		{
-			FPoint p;
+			FPoint NewPos;
 		};
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_p;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_NewPos;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
 #endif
 		static const UE4CodeGen_Private::FFunctionParams FuncParams;
 	};
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_ABlock_SetPos_Statics::NewProp_p = { "p", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(Block_eventSetPos_Parms, p), Z_Construct_UScriptStruct_FPoint, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_ABlock_SetPos_Statics::NewProp_NewPos = { "NewPos", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(Block_eventSetPos_Parms, NewPos), Z_Construct_UScriptStruct_FPoint, METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ABlock_SetPos_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABlock_SetPos_Statics::NewProp_p,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABlock_SetPos_Statics::NewProp_NewPos,
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ABlock_SetPos_Statics::Function_MetaDataParams[] = {
@@ -382,7 +382,7 @@ static struct FScriptStruct_Tetris_UE_StaticRegisterNativesFPoint
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_ABlock_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_ABlock_GetPosList, "GetPosList" }, // 1539894603
-		{ &Z_Construct_UFunction_ABlock_SetPos, "SetPos" }, // 4022394586
+		{ &Z_Construct_UFunction_ABlock_SetPos, "SetPos" }, // 3400487660
 		{ &Z_Construct_UFunction_ABlock_Spin_L, "Spin_L" }, // 2601936563
 		{ &Z_Construct_UFunction_ABlock_Spin_R, "Spin_R" }, // 3328066589
 	};
@@ -453,7 +453,7 @@ static struct FScriptStruct_Tetris_UE_StaticRegisterNativesFPoint
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ABlock, 702317696);
+	IMPLEMENT_CLASS(ABlock, 2257724423);
 	template<> TETRIS_UE_API UClass* StaticClass<ABlock>()
 	{
 		return ABlock::StaticClass();

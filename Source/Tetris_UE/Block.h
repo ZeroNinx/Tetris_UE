@@ -9,16 +9,16 @@
 
 //枚举蓝图类，表示方块类型
 UENUM(BlueprintType)
-enum class EBlockType: uint8
+enum class EBlockType : uint8
 {
-	NONE,
-	TBLOCK,
-	IBLOCK,
-	OBLOCK,
-	LBLOCK,
-	JBLOCK,
-	SBLOCK,
-	ZBLOCK
+	NONE = 0,
+	TBLOCK = 1,
+	IBLOCK = 2,
+	OBLOCK = 3,
+	LBLOCK = 4,
+	JBLOCK = 5,
+	SBLOCK = 6,
+	ZBLOCK = 7
 };
 
 //结构体，表示坐标
@@ -62,6 +62,8 @@ public:
 
 protected:
 	
+	
+
 	//方块大小
 	UPROPERTY(EditAnywhere)
 	int BlockSize = 60;
@@ -106,7 +108,7 @@ public:
 
 	//设定坐标
 	UFUNCTION(BlueprintCallable)
-	void SetPos(FPoint p);
+	void SetPos(FPoint NewPos);
 
 	//获取坐标列表
 	UFUNCTION(BlueprintCallable)

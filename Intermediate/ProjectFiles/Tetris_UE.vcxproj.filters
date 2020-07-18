@@ -32,66 +32,77 @@
     <Filter Include="Source\Tetris_UE">
       <UniqueIdentifier>{A289673D-1829-4DBB-810A-C7C22C4E1005}</UniqueIdentifier>
     </Filter>
-    <ClCompile Include="..\..\Source\Tetris_UE\Block.cpp">
-      <Filter>Source\Tetris_UE</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Tetris_UE\Block.h">
-      <Filter>Source\Tetris_UE</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\Tetris_UE\JBlock.cpp">
-      <Filter>Source\Tetris_UE</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Tetris_UE\JBlock.h">
-      <Filter>Source\Tetris_UE</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\Tetris_UE\LBlock.cpp">
-      <Filter>Source\Tetris_UE</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Tetris_UE\LBlock.h">
-      <Filter>Source\Tetris_UE</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\Tetris_UE\OBlock.cpp">
-      <Filter>Source\Tetris_UE</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Tetris_UE\OBlock.h">
-      <Filter>Source\Tetris_UE</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\Tetris_UE\SBlock.cpp">
-      <Filter>Source\Tetris_UE</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Tetris_UE\SBlock.h">
-      <Filter>Source\Tetris_UE</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\Tetris_UE\TBlock.cpp">
-      <Filter>Source\Tetris_UE</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Tetris_UE\TBlock.h">
-      <Filter>Source\Tetris_UE</Filter>
-    </ClInclude>
     <None Include="..\..\Source\Tetris_UE\Tetris_UE.Build.cs">
-      <Filter>Source\Tetris_UE</Filter>
+      <Filter>Source\Tetris_UE\Blocks</Filter>
     </None>
-    <ClCompile Include="..\..\Source\Tetris_UE\Tetris_UE.cpp">
-      <Filter>Source\Tetris_UE</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Tetris_UE\Tetris_UE.h">
-      <Filter>Source\Tetris_UE</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Source\Tetris_UE\ZBlock.h">
+    <ClInclude Include="..\..\Source\Tetris_UE\StaticPlayer.h">
       <Filter>Source\Tetris_UE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Tetris_UE\Block.h">
+      <Filter>Source\Tetris_UE\Blocks</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\Tetris_UE\IBlock.h">
-      <Filter>Source\Tetris_UE</Filter>
+      <Filter>Source\Tetris_UE\Blocks</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Tetris_UE\JBlock.h">
+      <Filter>Source\Tetris_UE\Blocks</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Tetris_UE\LBlock.h">
+      <Filter>Source\Tetris_UE\Blocks</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Tetris_UE\OBlock.h">
+      <Filter>Source\Tetris_UE\Blocks</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Tetris_UE\SBlock.h">
+      <Filter>Source\Tetris_UE\Blocks</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Tetris_UE\TBlock.h">
+      <Filter>Source\Tetris_UE\Blocks</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Tetris_UE\Tetris_UE.h">
+      <Filter>Source\Tetris_UE\Blocks</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Tetris_UE\ZBlock.h">
+      <Filter>Source\Tetris_UE\Blocks</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Source\Tetris_UE\ZBlock.cpp">
+    <ClCompile Include="..\..\Source\Tetris_UE\StaticPlayer.cpp">
       <Filter>Source\Tetris_UE</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Tetris_UE\Block.cpp">
+      <Filter>Source\Tetris_UE\Blocks</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\Tetris_UE\IBlock.cpp">
-      <Filter>Source\Tetris_UE</Filter>
+      <Filter>Source\Tetris_UE\Blocks</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Tetris_UE\JBlock.cpp">
+      <Filter>Source\Tetris_UE\Blocks</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Tetris_UE\LBlock.cpp">
+      <Filter>Source\Tetris_UE\Blocks</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Tetris_UE\OBlock.cpp">
+      <Filter>Source\Tetris_UE\Blocks</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Tetris_UE\SBlock.cpp">
+      <Filter>Source\Tetris_UE\Blocks</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Tetris_UE\TBlock.cpp">
+      <Filter>Source\Tetris_UE\Blocks</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Tetris_UE\Tetris_UE.cpp">
+      <Filter>Source\Tetris_UE\Blocks</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Tetris_UE\ZBlock.cpp">
+      <Filter>Source\Tetris_UE\Blocks</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source\Tetris_UE\Blocks">
+      <UniqueIdentifier>{59783f07-69ce-4bf7-a915-ad6fce180077}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>
