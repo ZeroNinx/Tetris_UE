@@ -37,9 +37,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Source\Tetris_UE\StaticPlayer.h">
-      <Filter>Source\Tetris_UE</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Source\Tetris_UE\Block.h">
       <Filter>Source\Tetris_UE\Blocks</Filter>
     </ClInclude>
@@ -69,9 +66,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Source\Tetris_UE\StaticPlayer.cpp">
-      <Filter>Source\Tetris_UE</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Source\Tetris_UE\Block.cpp">
       <Filter>Source\Tetris_UE\Blocks</Filter>
     </ClCompile>

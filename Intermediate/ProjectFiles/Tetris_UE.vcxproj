@@ -273,10 +273,8 @@
   </PropertyGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Source\Tetris_UE\IBlock.cpp" />
-    <ClCompile Include="..\..\Source\Tetris_UE\StaticPlayer.cpp" />
     <ClCompile Include="..\..\Source\Tetris_UE\ZBlock.cpp" />
     <ClInclude Include="..\..\Source\Tetris_UE\IBlock.h" />
-    <ClInclude Include="..\..\Source\Tetris_UE\StaticPlayer.h" />
     <ClInclude Include="..\..\Source\Tetris_UE\ZBlock.h" />
     <None Include="..\..\Tetris_UE.uproject" />
     <None Include="..\..\Source\Tetris_UE.Target.cs" />

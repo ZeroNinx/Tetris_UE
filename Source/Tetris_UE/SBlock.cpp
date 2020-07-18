@@ -7,7 +7,7 @@
 ASBlock::ASBlock() :ABlock()
 {
 	//设定方块类型
-	Type = EBlockType::ZBLOCK;
+	Type = EBlockType::SBLOCK;
 
 	//初始化坐标列表
 	PosList.Init(TArray<FPoint>(), 3);
