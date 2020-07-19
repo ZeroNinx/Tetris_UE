@@ -114,4 +114,13 @@ public:
 	UFUNCTION(BlueprintCallable)
 	virtual TArray<FPoint> GetPosList();
 
+	//获取左旋坐标列表
+	UFUNCTION(BlueprintCallable)
+	virtual TArray<FPoint> GetPosListL();
+
+	//获取右旋坐标列表
+	UFUNCTION(BlueprintCallable)
+	virtual TArray<FPoint> GetPosListR();
+
+
 };

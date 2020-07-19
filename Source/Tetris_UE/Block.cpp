@@ -55,3 +55,19 @@ TArray<FPoint> ABlock::GetPosList()
 	Arr.Add(Pos);
 	return Arr;
 }
+
+//返回坐标列表
+TArray<FPoint> ABlock::GetPosListL()
+{
+	TArray<FPoint> Arr;
+	Arr.Add(Pos);
+	return Arr;
+}
+
+//返回坐标列表
+TArray<FPoint> ABlock::GetPosListR()
+{
+	TArray<FPoint> Arr;
+	Arr.Add(Pos);
+	return Arr;
+}

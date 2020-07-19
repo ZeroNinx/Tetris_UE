@@ -24,5 +24,7 @@ protected:
 	void Spin_R() override;
 
 	TArray<FPoint> GetPosList() override;
+	TArray<FPoint> GetPosListL() override;
+	TArray<FPoint> GetPosListR() override;
 
 };

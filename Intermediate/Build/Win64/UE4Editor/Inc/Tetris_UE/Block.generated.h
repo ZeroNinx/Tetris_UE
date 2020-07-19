@@ -24,6 +24,8 @@ template<> TETRIS_UE_API UScriptStruct* StaticStruct<struct FPoint>();
 #define Tetris_UE_Source_Tetris_UE_Block_h_57_SPARSE_DATA
 #define Tetris_UE_Source_Tetris_UE_Block_h_57_RPC_WRAPPERS \
  \
+	DECLARE_FUNCTION(execGetPosListR); \
+	DECLARE_FUNCTION(execGetPosListL); \
 	DECLARE_FUNCTION(execGetPosList); \
 	DECLARE_FUNCTION(execSetPos); \
 	DECLARE_FUNCTION(execSpin_R); \
@@ -32,6 +34,8 @@ template<> TETRIS_UE_API UScriptStruct* StaticStruct<struct FPoint>();
 
 #define Tetris_UE_Source_Tetris_UE_Block_h_57_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execGetPosListR); \
+	DECLARE_FUNCTION(execGetPosListL); \
 	DECLARE_FUNCTION(execGetPosList); \
 	DECLARE_FUNCTION(execSetPos); \
 	DECLARE_FUNCTION(execSpin_R); \

@@ -72,3 +72,15 @@ TArray<FPoint> AOBlock::GetPosList()
 
 	return Arr;
 }
+
+//返回左旋坐标列表
+TArray<FPoint> AOBlock::GetPosListL()
+{
+	return GetPosList();
+}
+
+//返回右旋坐标列表
+TArray<FPoint> AOBlock::GetPosListR()
+{
+	return GetPosList();
+}

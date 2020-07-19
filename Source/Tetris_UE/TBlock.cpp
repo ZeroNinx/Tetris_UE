@@ -96,3 +96,41 @@ TArray<FPoint> ATBlock::GetPosList()
 		Arr.Add(Pos + PosList[i][RotationIndex]);
 	return Arr;
 }
+
+//返回左旋坐标列表
+TArray<FPoint> ATBlock::GetPosListL()
+{
+	//创建数组
+	TArray<FPoint> Arr;
+
+	//预测下一个中心点和旋转页
+	FPoint NextPos = Pos;
+	int NewRotationIndex = (RotationIndex + 3) % 4;
+
+	//中心坐标
+	Arr.Add(NextPos);
+
+	//中心坐标通过相对坐标旋转角度计算出其余坐标
+	for (int i = 0; i < PosList.Num(); i++)
+		Arr.Add(NextPos + PosList[i][NewRotationIndex]);
+	return Arr;
+}
+
+//返回右旋坐标列表
+TArray<FPoint> ATBlock::GetPosListR()
+{
+	//创建数组
+	TArray<FPoint> Arr;
+
+	//预测下一个中心点和旋转页
+	FPoint NextPos = Pos;
+	int NewRotationIndex = (RotationIndex + 1) % 4;
+
+	//中心坐标
+	Arr.Add(NextPos);
+
+	//中心坐标通过相对坐标旋转角度计算出其余坐标
+	for (int i = 0; i < PosList.Num(); i++)
+		Arr.Add(NextPos + PosList[i][NewRotationIndex]);
+	return Arr;
+}

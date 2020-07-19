@@ -189,6 +189,20 @@ static struct FScriptStruct_Tetris_UE_StaticRegisterNativesFPoint
 		return ReturnStruct;
 	}
 	uint32 Get_Z_Construct_UScriptStruct_FPoint_Hash() { return 779017914U; }
+	DEFINE_FUNCTION(ABlock::execGetPosListR)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		*(TArray<FPoint>*)Z_Param__Result=P_THIS->GetPosListR();
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(ABlock::execGetPosListL)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		*(TArray<FPoint>*)Z_Param__Result=P_THIS->GetPosListL();
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(ABlock::execGetPosList)
 	{
 		P_FINISH;
@@ -223,6 +237,8 @@ static struct FScriptStruct_Tetris_UE_StaticRegisterNativesFPoint
 		UClass* Class = ABlock::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
 			{ "GetPosList", &ABlock::execGetPosList },
+			{ "GetPosListL", &ABlock::execGetPosListL },
+			{ "GetPosListR", &ABlock::execGetPosListR },
 			{ "SetPos", &ABlock::execSetPos },
 			{ "Spin_L", &ABlock::execSpin_L },
 			{ "Spin_R", &ABlock::execSpin_R },
@@ -263,6 +279,80 @@ static struct FScriptStruct_Tetris_UE_StaticRegisterNativesFPoint
 		if (!ReturnFunction)
 		{
 			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_ABlock_GetPosList_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_ABlock_GetPosListL_Statics
+	{
+		struct Block_eventGetPosListL_Parms
+		{
+			TArray<FPoint> ReturnValue;
+		};
+		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_ReturnValue;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_ReturnValue_Inner;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_ABlock_GetPosListL_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(Block_eventGetPosListL_Parms, ReturnValue), EArrayPropertyFlags::None, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_ABlock_GetPosListL_Statics::NewProp_ReturnValue_Inner = { "ReturnValue", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UScriptStruct_FPoint, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ABlock_GetPosListL_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABlock_GetPosListL_Statics::NewProp_ReturnValue,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABlock_GetPosListL_Statics::NewProp_ReturnValue_Inner,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ABlock_GetPosListL_Statics::Function_MetaDataParams[] = {
+		{ "Comment", "//??\xc8\xa1?????????\xd0\xb1?\n" },
+		{ "ModuleRelativePath", "Block.h" },
+		{ "ToolTip", "??\xc8\xa1?????????\xd0\xb1?" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ABlock_GetPosListL_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABlock, nullptr, "GetPosListL", nullptr, nullptr, sizeof(Block_eventGetPosListL_Parms), Z_Construct_UFunction_ABlock_GetPosListL_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ABlock_GetPosListL_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020400, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ABlock_GetPosListL_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ABlock_GetPosListL_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_ABlock_GetPosListL()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_ABlock_GetPosListL_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_ABlock_GetPosListR_Statics
+	{
+		struct Block_eventGetPosListR_Parms
+		{
+			TArray<FPoint> ReturnValue;
+		};
+		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_ReturnValue;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_ReturnValue_Inner;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_ABlock_GetPosListR_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(Block_eventGetPosListR_Parms, ReturnValue), EArrayPropertyFlags::None, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_ABlock_GetPosListR_Statics::NewProp_ReturnValue_Inner = { "ReturnValue", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UScriptStruct_FPoint, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ABlock_GetPosListR_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABlock_GetPosListR_Statics::NewProp_ReturnValue,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABlock_GetPosListR_Statics::NewProp_ReturnValue_Inner,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ABlock_GetPosListR_Statics::Function_MetaDataParams[] = {
+		{ "Comment", "//??\xc8\xa1?????????\xd0\xb1?\n" },
+		{ "ModuleRelativePath", "Block.h" },
+		{ "ToolTip", "??\xc8\xa1?????????\xd0\xb1?" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ABlock_GetPosListR_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABlock, nullptr, "GetPosListR", nullptr, nullptr, sizeof(Block_eventGetPosListR_Parms), Z_Construct_UFunction_ABlock_GetPosListR_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ABlock_GetPosListR_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020400, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ABlock_GetPosListR_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ABlock_GetPosListR_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_ABlock_GetPosListR()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_ABlock_GetPosListR_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -382,6 +472,8 @@ static struct FScriptStruct_Tetris_UE_StaticRegisterNativesFPoint
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_ABlock_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_ABlock_GetPosList, "GetPosList" }, // 1539894603
+		{ &Z_Construct_UFunction_ABlock_GetPosListL, "GetPosListL" }, // 2549116439
+		{ &Z_Construct_UFunction_ABlock_GetPosListR, "GetPosListR" }, // 1830976156
 		{ &Z_Construct_UFunction_ABlock_SetPos, "SetPos" }, // 3400487660
 		{ &Z_Construct_UFunction_ABlock_Spin_L, "Spin_L" }, // 2601936563
 		{ &Z_Construct_UFunction_ABlock_Spin_R, "Spin_R" }, // 3328066589
@@ -453,7 +545,7 @@ static struct FScriptStruct_Tetris_UE_StaticRegisterNativesFPoint
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ABlock, 2257724423);
+	IMPLEMENT_CLASS(ABlock, 433456664);
 	template<> TETRIS_UE_API UClass* StaticClass<ABlock>()
 	{
 		return ABlock::StaticClass();
