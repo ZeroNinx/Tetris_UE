@@ -79,7 +79,7 @@ void ATBlock::Spin_L()
 //右旋
 void ATBlock::Spin_R()
 {
-	Super::Spin_L();
+	Super::Spin_R();
 }
 
 //返回坐标列表

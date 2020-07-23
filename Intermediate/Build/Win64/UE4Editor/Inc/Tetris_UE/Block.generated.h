@@ -28,6 +28,7 @@ template<> TETRIS_UE_API UScriptStruct* StaticStruct<struct FPoint>();
 	DECLARE_FUNCTION(execGetPosListL); \
 	DECLARE_FUNCTION(execGetPosList); \
 	DECLARE_FUNCTION(execSetPos); \
+	DECLARE_FUNCTION(execGetRotationIndex); \
 	DECLARE_FUNCTION(execSpin_R); \
 	DECLARE_FUNCTION(execSpin_L);
 
@@ -38,6 +39,7 @@ template<> TETRIS_UE_API UScriptStruct* StaticStruct<struct FPoint>();
 	DECLARE_FUNCTION(execGetPosListL); \
 	DECLARE_FUNCTION(execGetPosList); \
 	DECLARE_FUNCTION(execSetPos); \
+	DECLARE_FUNCTION(execGetRotationIndex); \
 	DECLARE_FUNCTION(execSpin_R); \
 	DECLARE_FUNCTION(execSpin_L);
 

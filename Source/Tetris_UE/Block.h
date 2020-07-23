@@ -61,8 +61,6 @@ public:
 	ABlock();
 
 protected:
-	
-	
 
 	//方块大小
 	UPROPERTY(EditAnywhere)
@@ -103,8 +101,13 @@ protected:
 	virtual void Spin_R();
 
 public:	
+
 	//每帧执行
 	virtual void Tick(float DeltaTime) override;
+
+	//获取旋转方向
+	UFUNCTION(BlueprintCallable)
+	int GetRotationIndex();
 
 	//设定坐标
 	UFUNCTION(BlueprintCallable)
@@ -121,6 +124,5 @@ public:
 	//获取右旋坐标列表
 	UFUNCTION(BlueprintCallable)
 	virtual TArray<FPoint> GetPosListR();
-
 
 };

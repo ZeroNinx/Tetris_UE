@@ -25,6 +25,12 @@ void ABlock::Tick(float DeltaTime)
 
 }
 
+//获取旋转方向
+int ABlock::GetRotationIndex()
+{
+	return RotationIndex;
+}
+
 //左旋
 void ABlock::Spin_L()
 {
