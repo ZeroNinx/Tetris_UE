@@ -89,6 +89,9 @@ protected:
 	//坐标列表
 	TArray<TArray<FPoint>> PosList;
 
+	//方块材质列表
+	TArray<UStaticMeshComponent*> MeshList;
+
 	//游戏开始
 	virtual void BeginPlay() override;
 
@@ -125,4 +128,7 @@ public:
 	UFUNCTION(BlueprintCallable)
 	virtual TArray<FPoint> GetPosListR();
 
+	//设定方块材质
+	UFUNCTION(BlueprintCallable)
+	void SetBlockMaterial(UMaterialInterface* material);
 };

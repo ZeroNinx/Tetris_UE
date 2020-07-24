@@ -8,6 +8,7 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class UMaterialInterface;
 struct FPoint;
 #ifdef TETRIS_UE_Block_generated_h
 #error "Block.generated.h already included, missing '#pragma once' in Block.h"
@@ -24,6 +25,7 @@ template<> TETRIS_UE_API UScriptStruct* StaticStruct<struct FPoint>();
 #define Tetris_UE_Source_Tetris_UE_Block_h_57_SPARSE_DATA
 #define Tetris_UE_Source_Tetris_UE_Block_h_57_RPC_WRAPPERS \
  \
+	DECLARE_FUNCTION(execSetBlockMaterial); \
 	DECLARE_FUNCTION(execGetPosListR); \
 	DECLARE_FUNCTION(execGetPosListL); \
 	DECLARE_FUNCTION(execGetPosList); \
@@ -35,6 +37,7 @@ template<> TETRIS_UE_API UScriptStruct* StaticStruct<struct FPoint>();
 
 #define Tetris_UE_Source_Tetris_UE_Block_h_57_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execSetBlockMaterial); \
 	DECLARE_FUNCTION(execGetPosListR); \
 	DECLARE_FUNCTION(execGetPosListL); \
 	DECLARE_FUNCTION(execGetPosList); \

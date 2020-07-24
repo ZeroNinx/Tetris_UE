@@ -68,6 +68,12 @@ ASBlock::ASBlock() :ABlock()
 		SB_Down->SetMaterial(0, SBlock_Material.Object);
 		SB_DownLeft->SetMaterial(0, SBlock_Material.Object);
 	}
+
+	//记录方块引用
+	MeshList.Add(SB_DownLeft);
+	MeshList.Add(SB_Center);
+	MeshList.Add(SB_Down);
+	MeshList.Add(SB_Right);
 }
 
 //左旋

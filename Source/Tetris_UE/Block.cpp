@@ -8,7 +8,6 @@ ABlock::ABlock()
 {
  	//设置可以被Tick
 	PrimaryActorTick.bCanEverTick = true;
-
 }
 
 //游戏开始
@@ -76,4 +75,13 @@ TArray<FPoint> ABlock::GetPosListR()
 	TArray<FPoint> Arr;
 	Arr.Add(Pos);
 	return Arr;
+}
+
+//设定方块材质
+void ABlock::SetBlockMaterial(UMaterialInterface* material)
+{
+	for (int i = 0; i < MeshList.Num(); i++)
+	{
+		MeshList[i]->SetMaterial(0, material);
+	}
 }

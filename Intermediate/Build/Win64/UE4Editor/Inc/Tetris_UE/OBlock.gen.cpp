@@ -73,7 +73,7 @@ void EmptyLinkFunctionForGeneratedCodeOBlock() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AOBlock, 2150852248);
+	IMPLEMENT_CLASS(AOBlock, 805644850);
 	template<> TETRIS_UE_API UClass* StaticClass<AOBlock>()
 	{
 		return AOBlock::StaticClass();

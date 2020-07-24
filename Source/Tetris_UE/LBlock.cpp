@@ -68,6 +68,12 @@ ALBlock::ALBlock() :ABlock()
 		LB_Left->SetMaterial(0, LBlock_Material.Object);
 		LB_Right->SetMaterial(0, LBlock_Material.Object);
 	}
+
+	//记录方块引用
+	MeshList.Add(LB_Left);
+	MeshList.Add(LB_Center);
+	MeshList.Add(LB_Right);
+	MeshList.Add(LB_UpRight);
 }
 
 //左旋

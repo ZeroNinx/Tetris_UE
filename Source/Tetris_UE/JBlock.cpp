@@ -68,6 +68,12 @@ AJBlock::AJBlock() :ABlock()
 		JB_Left->SetMaterial(0, JBlock_Material.Object);
 		JB_Right->SetMaterial(0, JBlock_Material.Object);
 	}
+
+	//记录方块引用
+	MeshList.Add(JB_Center);
+	MeshList.Add(JB_Left);
+	MeshList.Add(JB_UpLeft);
+	MeshList.Add(JB_Right);
 }
 
 //左旋

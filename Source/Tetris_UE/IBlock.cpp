@@ -68,6 +68,12 @@ AIBlock::AIBlock():ABlock()
 		IB_Down->SetMaterial(0, IBlock_Material.Object);
 		IB_DownDown->SetMaterial(0, IBlock_Material.Object);
 	}
+
+	//记录方块引用
+	MeshList.Add(IB_Up);
+	MeshList.Add(IB_Center);
+	MeshList.Add(IB_Down);
+	MeshList.Add(IB_DownDown);
 }
 
 //左旋

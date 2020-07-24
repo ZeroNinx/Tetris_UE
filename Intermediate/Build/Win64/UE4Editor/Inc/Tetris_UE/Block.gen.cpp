@@ -19,6 +19,7 @@ void EmptyLinkFunctionForGeneratedCodeBlock() {}
 	TETRIS_UE_API UClass* Z_Construct_UClass_ABlock_NoRegister();
 	TETRIS_UE_API UClass* Z_Construct_UClass_ABlock();
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
+	ENGINE_API UClass* Z_Construct_UClass_UMaterialInterface_NoRegister();
 // End Cross Module References
 	static UEnum* EBlockType_StaticEnum()
 	{
@@ -189,6 +190,14 @@ static struct FScriptStruct_Tetris_UE_StaticRegisterNativesFPoint
 		return ReturnStruct;
 	}
 	uint32 Get_Z_Construct_UScriptStruct_FPoint_Hash() { return 779017914U; }
+	DEFINE_FUNCTION(ABlock::execSetBlockMaterial)
+	{
+		P_GET_OBJECT(UMaterialInterface,Z_Param_material);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->SetBlockMaterial(Z_Param_material);
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(ABlock::execGetPosListR)
 	{
 		P_FINISH;
@@ -247,6 +256,7 @@ static struct FScriptStruct_Tetris_UE_StaticRegisterNativesFPoint
 			{ "GetPosListL", &ABlock::execGetPosListL },
 			{ "GetPosListR", &ABlock::execGetPosListR },
 			{ "GetRotationIndex", &ABlock::execGetRotationIndex },
+			{ "SetBlockMaterial", &ABlock::execSetBlockMaterial },
 			{ "SetPos", &ABlock::execSetPos },
 			{ "Spin_L", &ABlock::execSpin_L },
 			{ "Spin_R", &ABlock::execSpin_R },
@@ -398,6 +408,40 @@ static struct FScriptStruct_Tetris_UE_StaticRegisterNativesFPoint
 		}
 		return ReturnFunction;
 	}
+	struct Z_Construct_UFunction_ABlock_SetBlockMaterial_Statics
+	{
+		struct Block_eventSetBlockMaterial_Parms
+		{
+			UMaterialInterface* material;
+		};
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_material;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_ABlock_SetBlockMaterial_Statics::NewProp_material = { "material", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(Block_eventSetBlockMaterial_Parms, material), Z_Construct_UClass_UMaterialInterface_NoRegister, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ABlock_SetBlockMaterial_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABlock_SetBlockMaterial_Statics::NewProp_material,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ABlock_SetBlockMaterial_Statics::Function_MetaDataParams[] = {
+		{ "Comment", "//?\xe8\xb6\xa8????????\n" },
+		{ "ModuleRelativePath", "Block.h" },
+		{ "ToolTip", "?\xe8\xb6\xa8????????" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ABlock_SetBlockMaterial_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABlock, nullptr, "SetBlockMaterial", nullptr, nullptr, sizeof(Block_eventSetBlockMaterial_Parms), Z_Construct_UFunction_ABlock_SetBlockMaterial_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ABlock_SetBlockMaterial_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ABlock_SetBlockMaterial_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ABlock_SetBlockMaterial_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_ABlock_SetBlockMaterial()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_ABlock_SetBlockMaterial_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
 	struct Z_Construct_UFunction_ABlock_SetPos_Statics
 	{
 		struct Block_eventSetPos_Parms
@@ -517,6 +561,7 @@ static struct FScriptStruct_Tetris_UE_StaticRegisterNativesFPoint
 		{ &Z_Construct_UFunction_ABlock_GetPosListL, "GetPosListL" }, // 2549116439
 		{ &Z_Construct_UFunction_ABlock_GetPosListR, "GetPosListR" }, // 1830976156
 		{ &Z_Construct_UFunction_ABlock_GetRotationIndex, "GetRotationIndex" }, // 3008956179
+		{ &Z_Construct_UFunction_ABlock_SetBlockMaterial, "SetBlockMaterial" }, // 2185462302
 		{ &Z_Construct_UFunction_ABlock_SetPos, "SetPos" }, // 3400487660
 		{ &Z_Construct_UFunction_ABlock_Spin_L, "Spin_L" }, // 2601936563
 		{ &Z_Construct_UFunction_ABlock_Spin_R, "Spin_R" }, // 3328066589
@@ -588,7 +633,7 @@ static struct FScriptStruct_Tetris_UE_StaticRegisterNativesFPoint
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ABlock, 3545965958);
+	IMPLEMENT_CLASS(ABlock, 2759134366);
 	template<> TETRIS_UE_API UClass* StaticClass<ABlock>()
 	{
 		return ABlock::StaticClass();

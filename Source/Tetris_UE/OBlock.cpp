@@ -46,6 +46,12 @@ AOBlock::AOBlock() :ABlock()
 		OB_Down->SetMaterial(0, OBlock_Material.Object);
 		OB_Left->SetMaterial(0, OBlock_Material.Object);
 	}
+
+	//记录方块引用
+	MeshList.Add(OB_Up);
+	MeshList.Add(OB_Left);
+	MeshList.Add(OB_Down);
+	MeshList.Add(OB_Right);
 }
 
 void AOBlock::Spin_L()

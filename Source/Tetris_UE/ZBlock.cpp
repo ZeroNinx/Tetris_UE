@@ -68,6 +68,12 @@ AZBlock::AZBlock() :ABlock()
 		ZB_Down->SetMaterial(0, ZBlock_Material.Object);
 		ZB_DownRight->SetMaterial(0, ZBlock_Material.Object);
 	}
+
+	//记录方块引用
+	MeshList.Add(ZB_Center);
+	MeshList.Add(ZB_DownRight);
+	MeshList.Add(ZB_Down);
+	MeshList.Add(ZB_Left);
 }
 
 //左旋

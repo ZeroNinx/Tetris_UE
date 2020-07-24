@@ -68,6 +68,12 @@ ATBlock::ATBlock() :ABlock()
 		TB_Left->SetMaterial(0, TBlock_Material.Object);
 		TB_Right->SetMaterial(0, TBlock_Material.Object);
 	}
+
+	//记录方块引用
+	MeshList.Add(TB_Up);
+	MeshList.Add(TB_Center);
+	MeshList.Add(TB_Left);
+	MeshList.Add(TB_Right);
 }
 
 //左旋
