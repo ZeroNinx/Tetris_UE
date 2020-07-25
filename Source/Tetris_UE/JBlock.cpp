@@ -81,12 +81,61 @@ void AJBlock::Spin_L()
 {
 	Super::Spin_L();
 
+	//位移校准
+	switch (RotationIndex)
+	{
+	case 0:
+		SetActorRelativeLocation(GetActorLocation() + FVector(BlockSize, BlockSize, 0.0f));
+		Pos.X++;
+		Pos.Y++;
+		break;
+	case 1:
+		SetActorRelativeLocation(GetActorLocation() + FVector(-BlockSize, 0.0f, 0.0f));
+		Pos.X--;
+		break;
+	case 2:
+		SetActorRelativeLocation(GetActorLocation() + FVector(-BlockSize,0.0f, 0.0f));
+		Pos.X--;
+		break;
+	case 3:
+		SetActorRelativeLocation(GetActorLocation() + FVector(BlockSize, -BlockSize, 0.0f));
+		Pos.X++;
+		Pos.Y--;
+		break;
+	default:
+		break;
+	}
 }
 
 //右旋
 void AJBlock::Spin_R()
 {
 	Super::Spin_R();
+
+	//位移校准
+	switch (RotationIndex)
+	{
+	case 1:
+		SetActorRelativeLocation(GetActorLocation() + FVector(-BlockSize, -BlockSize, 0.0f));
+		Pos.X--;
+		Pos.Y--;
+		break;
+	case 2:
+		SetActorRelativeLocation(GetActorLocation() + FVector(BlockSize, 0.0f, 0.0f));
+		Pos.X++;
+		break;
+	case 3:
+		SetActorRelativeLocation(GetActorLocation() + FVector(BlockSize, 0.0f, 0.0f));
+		Pos.X++;
+		break;
+	case 0:
+		SetActorRelativeLocation(GetActorLocation() + FVector(-BlockSize, BlockSize, 0.0f));
+		Pos.X--;
+		Pos.Y++;
+		break;
+	default:
+		break;
+	}
 
 }
 
@@ -105,7 +154,6 @@ TArray<FPoint> AJBlock::GetPosList()
 	return Arr;
 }
 
-
 //返回左旋坐标列表
 TArray<FPoint> AJBlock::GetPosListL()
 {
@@ -115,6 +163,28 @@ TArray<FPoint> AJBlock::GetPosListL()
 	//预测下一个中心点和旋转页
 	FPoint NextPos = Pos;
 	int NewRotationIndex = (RotationIndex + 3) % 4;
+
+	//位移校准
+	switch (NewRotationIndex)
+	{
+	case 0:
+		NextPos.X++;
+		NextPos.Y++;
+		break;
+	case 1:
+		NextPos.X--;
+		break;
+	case 2:
+		NextPos.X--;
+		break;
+	case 3:
+		NextPos.X++;
+		NextPos.Y--;
+		break;
+	default:
+		break;
+	}
+
 
 	//中心坐标通过相对坐标旋转角度计算出其余坐标
 	for (int i = 0; i < PosList.Num(); i++)
@@ -131,6 +201,28 @@ TArray<FPoint> AJBlock::GetPosListR()
 	//预测下一个中心点和旋转页
 	FPoint NextPos = Pos;
 	int NewRotationIndex = (RotationIndex + 1) % 4;
+
+	//位移校准
+	switch (NewRotationIndex)
+	{
+	case 1:
+		NextPos.X--;
+		NextPos.Y--;
+		break;
+	case 2:
+		NextPos.X++;
+		break;
+	case 3:
+		NextPos.X++;
+		break;
+	case 0:
+		NextPos.X--;
+		NextPos.Y++;
+		break;
+	default:
+		break;
+	}
+
 
 	//中心坐标
 	Arr.Add(NextPos);
