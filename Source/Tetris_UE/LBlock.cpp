@@ -85,21 +85,15 @@ void ALBlock::Spin_L()
 	switch (RotationIndex)
 	{
 	case 0:
-		SetActorRelativeLocation(GetActorLocation() + FVector(BlockSize, BlockSize, 0.0f));
-		Pos.X++;
+		SetActorRelativeLocation(GetActorLocation() + FVector(0.0f, BlockSize, 0.0f));
 		Pos.Y++;
 		break;
 	case 1:
-		SetActorRelativeLocation(GetActorLocation() + FVector(-BlockSize, 0.0f, 0.0f));
-		Pos.X--;
 		break;
 	case 2:
-		SetActorRelativeLocation(GetActorLocation() + FVector(-BlockSize, 0.0f, 0.0f));
-		Pos.X--;
 		break;
 	case 3:
-		SetActorRelativeLocation(GetActorLocation() + FVector(BlockSize, -BlockSize, 0.0f));
-		Pos.X++;
+		SetActorRelativeLocation(GetActorLocation() + FVector(0.0f, -BlockSize, 0.0f));
 		Pos.Y--;
 		break;
 	default:
@@ -116,21 +110,15 @@ void ALBlock::Spin_R()
 	switch (RotationIndex)
 	{
 	case 1:
-		SetActorRelativeLocation(GetActorLocation() + FVector(-BlockSize, -BlockSize, 0.0f));
-		Pos.X--;
+		SetActorRelativeLocation(GetActorLocation() + FVector(0.0f, -BlockSize, 0.0f));
 		Pos.Y--;
 		break;
 	case 2:
-		SetActorRelativeLocation(GetActorLocation() + FVector(BlockSize, 0.0f, 0.0f));
-		Pos.X++;
 		break;
 	case 3:
-		SetActorRelativeLocation(GetActorLocation() + FVector(BlockSize, 0.0f, 0.0f));
-		Pos.X++;
 		break;
 	case 0:
-		SetActorRelativeLocation(GetActorLocation() + FVector(-BlockSize, BlockSize, 0.0f));
-		Pos.X--;
+		SetActorRelativeLocation(GetActorLocation() + FVector(0.0f, BlockSize, 0.0f));
 		Pos.Y++;
 		break;
 	default:
@@ -167,17 +155,13 @@ TArray<FPoint> ALBlock::GetPosListL()
 	switch (NewRotationIndex)
 	{
 	case 0:
-		NextPos.X++;
 		NextPos.Y++;
 		break;
 	case 1:
-		NextPos.X--;
 		break;
 	case 2:
-		NextPos.X--;
 		break;
 	case 3:
-		NextPos.X++;
 		NextPos.Y--;
 		break;
 	default:
@@ -207,17 +191,13 @@ TArray<FPoint> ALBlock::GetPosListR()
 	switch (NewRotationIndex)
 	{
 	case 1:
-		NextPos.X--;
 		NextPos.Y--;
 		break;
 	case 2:
-		NextPos.X++;
 		break;
 	case 3:
-		NextPos.X++;
 		break;
 	case 0:
-		NextPos.X--;
 		NextPos.Y++;
 		break;
 	default:
