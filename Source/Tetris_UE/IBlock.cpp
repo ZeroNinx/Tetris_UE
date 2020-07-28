@@ -12,68 +12,71 @@ AIBlock::AIBlock():ABlock()
 	//初始化坐标列表
 	PosList.Init(TArray<FPoint>(), 3);
 
-	//上方块
+	//左方块
+	PosList[0].Add(FPoint(-1, 0));
 	PosList[0].Add(FPoint(0, -1));
 	PosList[0].Add(FPoint(1, 0));
 	PosList[0].Add(FPoint(0, 1));
-	PosList[0].Add(FPoint(-1, 0));
+	
 
-	//下方块
+	//右方块
+	PosList[1].Add(FPoint(1, 0));
 	PosList[1].Add(FPoint(0, 1));
 	PosList[1].Add(FPoint(-1, 0));
 	PosList[1].Add(FPoint(0, -1));
-	PosList[1].Add(FPoint(1, 0));
+
 
 	//下下方块
+	PosList[2].Add(FPoint(2, 0));
 	PosList[2].Add(FPoint(0, 2));
 	PosList[2].Add(FPoint(-2, 0));
 	PosList[2].Add(FPoint(0, -2));
-	PosList[2].Add(FPoint(2, 0));
+	
 
 	//设定中心块
 	UStaticMeshComponent* IB_Center = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("IBlock_Center"));
 	RootComponent = IB_Center;
 
-	//上块
-	UStaticMeshComponent* IB_Up = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("IBlock_Up"));
-	IB_Up->SetRelativeLocation(FVector(0.0f, -BlockSize, 0.0f));
-	IB_Up->SetupAttachment(RootComponent);
+	//左块
+	UStaticMeshComponent* IB_Left = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("IBlock_Left"));
+	IB_Left->SetRelativeLocation(FVector(-BlockSize,0.0f,  0.0f));
+	IB_Left->SetupAttachment(RootComponent);
 
-	//下块
-	UStaticMeshComponent* IB_Down = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("IBlock_Down"));
-	IB_Down->SetRelativeLocation(FVector(0.0f, BlockSize, 0.0f));
-	IB_Down->SetupAttachment(RootComponent);
+	//右块
+	UStaticMeshComponent* IB_Right = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("IBlock_Right"));
+	IB_Right->SetRelativeLocation(FVector(BlockSize,0.0f,  0.0f));
+	IB_Right->SetupAttachment(RootComponent);
 
-	//下下块
-	UStaticMeshComponent* IB_DownDown = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("IBlock_DownDown"));
-	IB_DownDown->SetRelativeLocation(FVector(0.0f, BlockSize*2, 0.0f));
-	IB_DownDown->SetupAttachment(RootComponent);
+	//右右块
+	UStaticMeshComponent* IB_RightRight = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("IBlock_RightRight"));
+	IB_RightRight->SetRelativeLocation(FVector(BlockSize*2,0.0f,  0.0f));
+	IB_RightRight->SetupAttachment(RootComponent);
 
 	//加载形状
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> Basic_Block(TEXT("StaticMesh'/Game/Shapes/Basic_Block.Basic_Block'"));
 	if (Basic_Block.Succeeded())
 	{
-		IB_Up->SetStaticMesh(Basic_Block.Object);
+		IB_Left->SetStaticMesh(Basic_Block.Object);
 		IB_Center->SetStaticMesh(Basic_Block.Object);
-		IB_Down->SetStaticMesh(Basic_Block.Object);
-		IB_DownDown->SetStaticMesh(Basic_Block.Object);
+		IB_Right->SetStaticMesh(Basic_Block.Object);
+		IB_RightRight->SetStaticMesh(Basic_Block.Object);
 	}
 
 	//加载材质
 	static ConstructorHelpers::FObjectFinder<UMaterial> IBlock_Material(TEXT("Material'/Game/Materials/IBlock_Material.IBlock_Material'"));
 	if (IBlock_Material.Succeeded())
 	{
-		IB_Up->SetMaterial(0,IBlock_Material.Object);
+		IB_Left->SetMaterial(0,IBlock_Material.Object);
 		IB_Center->SetMaterial(0,IBlock_Material.Object);
-		IB_Down->SetMaterial(0, IBlock_Material.Object);
-		IB_DownDown->SetMaterial(0, IBlock_Material.Object);
+		IB_Right->SetMaterial(0, IBlock_Material.Object);
+		IB_RightRight->SetMaterial(0, IBlock_Material.Object);
 	}
 
 	//记录方块引用
-	MeshList.Add(IB_Up);
+	MeshList.Add(IB_Left);
 	MeshList.Add(IB_Center);
-	MeshList.Add(IB_Down);
-	MeshList.Add(IB_DownDown);
+	MeshList.Add(IB_Right);
+	MeshList.Add(IB_RightRight);
 }
 
 //左旋
@@ -84,19 +87,19 @@ void AIBlock::Spin_L()
 	//位移校准
 	switch (RotationIndex)
 	{
-	case 3:
+	case 0:
 		SetActorRelativeLocation(GetActorLocation() + FVector(0.0f, BlockSize, 0.0f));
 		Pos.Y++;
 		break;
-	case 2:
+	case 3:
 		SetActorRelativeLocation(GetActorLocation() + FVector(BlockSize, 0.0f, 0.0f));
 		Pos.X++;
 		break;
-	case 1:
+	case 2:
 		SetActorRelativeLocation(GetActorLocation() + FVector(0.0f, -BlockSize, 0.0f));
 		Pos.Y--;
 		break;
-	case 0:
+	case 1:
 		SetActorRelativeLocation(GetActorLocation() + FVector(-BlockSize, 0.0f, 0.0f));
 		Pos.X--;
 		break;
@@ -113,19 +116,19 @@ void AIBlock::Spin_R()
 	//位移校准
 	switch (RotationIndex)
 	{
-	case 1:
+	case 3:
 		SetActorRelativeLocation(GetActorLocation() + FVector(0.0f, BlockSize, 0.0f));
 		Pos.Y++;
 		break;
-	case 2:
+	case 0:
 		SetActorRelativeLocation(GetActorLocation() + FVector(-BlockSize, 0.0f, 0.0f));
 		Pos.X--;
 		break;
-	case 3:
+	case 1:
 		SetActorRelativeLocation(GetActorLocation() + FVector(0.0f, -BlockSize, 0.0f));
 		Pos.Y--;
 		break;
-	case 0:
+	case 2:
 		SetActorRelativeLocation(GetActorLocation() + FVector(BlockSize, 0.0f, 0.0f));
 		Pos.X++;
 		break;
@@ -161,16 +164,16 @@ TArray<FPoint> AIBlock::GetPosListL()
 
 	switch (NewRotationIndex)
 	{
-	case 3:
+	case 0:
 		NextPos.Y++;
 		break;
-	case 2:
+	case 3:
 		NextPos.X++;
 		break;
-	case 1:
+	case 2:
 		NextPos.Y--;
 		break;
-	case 0:
+	case 1:
 		NextPos.X--;
 		break;
 	default:
@@ -198,16 +201,16 @@ TArray<FPoint> AIBlock::GetPosListR()
 
 	switch (NewRotationIndex)
 	{
-	case 1:
+	case 3:
 		NextPos.Y++;
 		break;
-	case 2:
+	case 0:
 		NextPos.X--;
 		break;
-	case 3:
+	case 1:
 		NextPos.Y--;
 		break;
-	case 0:
+	case 2:
 		NextPos.X++;
 		break;
 	default:
