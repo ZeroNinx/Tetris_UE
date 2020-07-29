@@ -60,13 +60,13 @@ ATBlock::ATBlock() :ABlock()
 	}
 
 	//加载材质
-	static ConstructorHelpers::FObjectFinder<UMaterial> TBlock_Material(TEXT("Material'/Game/Materials/TBlock_Material.TBlock_Material'"));
-	if (TBlock_Material.Succeeded())
+	static ConstructorHelpers::FObjectFinder<UMaterial> M_TBlock(TEXT("Material'/Game/Materials/M_TBlock.M_TBlock'"));
+	if (M_TBlock.Succeeded())
 	{
-		TB_Center->SetMaterial(0, TBlock_Material.Object);
-		TB_Up->SetMaterial(0, TBlock_Material.Object);
-		TB_Left->SetMaterial(0, TBlock_Material.Object);
-		TB_Right->SetMaterial(0, TBlock_Material.Object);
+		TB_Center->SetMaterial(0, M_TBlock.Object);
+		TB_Up->SetMaterial(0, M_TBlock.Object);
+		TB_Left->SetMaterial(0, M_TBlock.Object);
+		TB_Right->SetMaterial(0, M_TBlock.Object);
 	}
 
 	//记录方块引用

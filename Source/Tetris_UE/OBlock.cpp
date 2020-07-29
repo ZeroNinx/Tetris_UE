@@ -38,13 +38,13 @@ AOBlock::AOBlock() :ABlock()
 	}
 
 	//加载材质
-	static ConstructorHelpers::FObjectFinder<UMaterial> OBlock_Material(TEXT("Material'/Game/Materials/OBlock_Material.OBlock_Material'"));
-	if (OBlock_Material.Succeeded())
+	static ConstructorHelpers::FObjectFinder<UMaterial> M_OBlock(TEXT("Material'/Game/Materials/M_OBlock.M_OBlock'"));
+	if (M_OBlock.Succeeded())
 	{
-		OB_Up->SetMaterial(0, OBlock_Material.Object);
-		OB_Right->SetMaterial(0, OBlock_Material.Object);
-		OB_Down->SetMaterial(0, OBlock_Material.Object);
-		OB_Left->SetMaterial(0, OBlock_Material.Object);
+		OB_Up->SetMaterial(0, M_OBlock.Object);
+		OB_Right->SetMaterial(0, M_OBlock.Object);
+		OB_Down->SetMaterial(0, M_OBlock.Object);
+		OB_Left->SetMaterial(0, M_OBlock.Object);
 	}
 
 	//记录方块引用

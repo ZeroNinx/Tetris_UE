@@ -60,13 +60,13 @@ ALBlock::ALBlock() :ABlock()
 	}
 
 	//加载材质
-	static ConstructorHelpers::FObjectFinder<UMaterial> LBlock_Material(TEXT("Material'/Game/Materials/LBlock_Material.LBlock_Material'"));
-	if (LBlock_Material.Succeeded())
+	static ConstructorHelpers::FObjectFinder<UMaterial> M_LBlock(TEXT("Material'/Game/Materials/M_LBlock.M_LBlock'"));
+	if (M_LBlock.Succeeded())
 	{
-		LB_Center->SetMaterial(0, LBlock_Material.Object);
-		LB_UpRight->SetMaterial(0, LBlock_Material.Object);
-		LB_Left->SetMaterial(0, LBlock_Material.Object);
-		LB_Right->SetMaterial(0, LBlock_Material.Object);
+		LB_Center->SetMaterial(0, M_LBlock.Object);
+		LB_UpRight->SetMaterial(0, M_LBlock.Object);
+		LB_Left->SetMaterial(0, M_LBlock.Object);
+		LB_Right->SetMaterial(0, M_LBlock.Object);
 	}
 
 	//记录方块引用

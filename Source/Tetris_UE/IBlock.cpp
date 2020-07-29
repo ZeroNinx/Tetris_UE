@@ -63,7 +63,7 @@ AIBlock::AIBlock():ABlock()
 	}
 
 	//º”‘ÿ≤ƒ÷ 
-	static ConstructorHelpers::FObjectFinder<UMaterial> IBlock_Material(TEXT("Material'/Game/Materials/IBlock_Material.IBlock_Material'"));
+	static ConstructorHelpers::FObjectFinder<UMaterial> IBlock_Material(TEXT("Material'/Game/Materials/M_IBlock.M_IBlock'"));
 	if (IBlock_Material.Succeeded())
 	{
 		IB_Left->SetMaterial(0,IBlock_Material.Object);

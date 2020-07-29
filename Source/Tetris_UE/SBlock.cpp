@@ -60,13 +60,13 @@ ASBlock::ASBlock() :ABlock()
 	}
 
 	//加载材质
-	static ConstructorHelpers::FObjectFinder<UMaterial> SBlock_Material(TEXT("Material'/Game/Materials/SBlock_Material.SBlock_Material'"));
-	if (SBlock_Material.Succeeded())
+	static ConstructorHelpers::FObjectFinder<UMaterial> M_SBlock(TEXT("Material'/Game/Materials/M_SBlock.M_SBlock'"));
+	if (M_SBlock.Succeeded())
 	{
-		SB_Center->SetMaterial(0, SBlock_Material.Object);
-		SB_Right->SetMaterial(0, SBlock_Material.Object);
-		SB_Down->SetMaterial(0, SBlock_Material.Object);
-		SB_DownLeft->SetMaterial(0, SBlock_Material.Object);
+		SB_Center->SetMaterial(0, M_SBlock.Object);
+		SB_Right->SetMaterial(0, M_SBlock.Object);
+		SB_Down->SetMaterial(0, M_SBlock.Object);
+		SB_DownLeft->SetMaterial(0, M_SBlock.Object);
 	}
 
 	//记录方块引用

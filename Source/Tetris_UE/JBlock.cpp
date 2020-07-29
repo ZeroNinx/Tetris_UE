@@ -60,13 +60,13 @@ AJBlock::AJBlock() :ABlock()
 	}
 
 	//加载材质
-	static ConstructorHelpers::FObjectFinder<UMaterial> JBlock_Material(TEXT("Material'/Game/Materials/JBlock_Material.JBlock_Material'"));
-	if (JBlock_Material.Succeeded())
+	static ConstructorHelpers::FObjectFinder<UMaterial> M_JBlock(TEXT("Material'/Game/Materials/M_JBlock.M_JBlock'"));
+	if (M_JBlock.Succeeded())
 	{
-		JB_Center->SetMaterial(0, JBlock_Material.Object);
-		JB_UpLeft->SetMaterial(0, JBlock_Material.Object);
-		JB_Left->SetMaterial(0, JBlock_Material.Object);
-		JB_Right->SetMaterial(0, JBlock_Material.Object);
+		JB_Center->SetMaterial(0, M_JBlock.Object);
+		JB_UpLeft->SetMaterial(0, M_JBlock.Object);
+		JB_Left->SetMaterial(0, M_JBlock.Object);
+		JB_Right->SetMaterial(0, M_JBlock.Object);
 	}
 
 	//记录方块引用

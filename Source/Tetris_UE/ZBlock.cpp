@@ -60,13 +60,13 @@ AZBlock::AZBlock() :ABlock()
 	}
 
 	//加载材质
-	static ConstructorHelpers::FObjectFinder<UMaterial> ZBlock_Material(TEXT("Material'/Game/Materials/ZBlock_Material.ZBlock_Material'"));
-	if (ZBlock_Material.Succeeded())
+	static ConstructorHelpers::FObjectFinder<UMaterial> M_ZBlock(TEXT("Material'/Game/Materials/M_ZBlock.M_ZBlock'"));
+	if (M_ZBlock.Succeeded())
 	{
-		ZB_Center->SetMaterial(0, ZBlock_Material.Object);
-		ZB_Left->SetMaterial(0, ZBlock_Material.Object);
-		ZB_Down->SetMaterial(0, ZBlock_Material.Object);
-		ZB_DownRight->SetMaterial(0, ZBlock_Material.Object);
+		ZB_Center->SetMaterial(0, M_ZBlock.Object);
+		ZB_Left->SetMaterial(0, M_ZBlock.Object);
+		ZB_Down->SetMaterial(0, M_ZBlock.Object);
+		ZB_DownRight->SetMaterial(0, M_ZBlock.Object);
 	}
 
 	//记录方块引用
