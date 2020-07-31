@@ -72,7 +72,7 @@ protected:
 
 	//方块类型
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
-	EBlockType Type;
+	EBlockType Type=EBlockType::NONE;
 
 	//当前旋转方向
 	int RotationIndex = 0;
